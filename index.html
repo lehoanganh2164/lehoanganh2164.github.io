@@ -1,822 +1,1250 @@
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="vi">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="images/check.png">
-    <title>Phần mềm quản lý bán hàng</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-datepicker.css" rel="stylesheet">
-    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/jquery-ui.min.css" rel="stylesheet">
-    <link href="css/jquery.datetimepicker.css" rel="stylesheet">
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <!-- Start of  Zendesk Widget script -->
-    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=0276835d-28d3-4bc2-8ad8-acd25bb427b4"> </script>
-    <script type="text/javascript" src="https://static.zdassets.com/ekr/asset_composer.5e12e43b022a913c3713.js" charset="utf-8" async=""></script>
-    <!-- End of  Zendesk Widget script -->
-    <style>.cke{visibility:hidden;}</style>
-    <style>#launcher{opacity:1 !important;overflow: visible !important}#webWidget{opacity:1 !important;overflow: visible !important}</style>
+    <link rel="shortcut icon" href="img/favicon5a54.png" type="image/png" />
+    <meta charset="utf-8" />
+    <title>Xetulai247</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=0' name='viewport' />
+    <script src="js/jquery.min.1.11.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src='js/default_script.min5a54.js' type='text/javascript'></script>
+    <link href='css/default_style.min5a54.css' rel='stylesheet' type='text/css' media='all' />
+    <script src="js/jquery-migrate-1.2.0.min.js"></script>
+    <script data-target=".product-resize" data-parent=".products-resize" data-img-box=".image-resize" src="js/fixheightproductv2.js"></script>
+    <script src='js/jquery.flexslider.js' type='text/javascript'></script>
+    <link href='css/flexslider.css' rel='stylesheet' type='text/css' media='all' />
+    <script src='js/scripts5a54.js' type='text/javascript'></script>
+    <link rel="stylesheet" type="text/css" href="css/roboto.css">
+    <link rel="stylesheet" href="css/bootstrap.3.3.1.css">
+    <link href='font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css' media='all' />
+    <link href='css/styles5a54.css' rel='stylesheet' type='text/css' media='all' />
 </head>
 
-<body style="">
-    <header>
-        <nav id="navbar-container" class="navbar navbar- navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle menu-toggler pull-left" onclick="$('#sidebar').toggleClass('hidden-xs hidden-sm hidden-md')">
-                        <span class="sr-only">Toggle sidebar</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <button type="button" class="navbar-toggle menu-toggler pull-right" onclick="$('#header').toggleClass('hidden-xs hidden-sm hidden-md')">
-                        <span class="sr-only">Toggle sidebar</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse navbar-header hidden-768 col-xs-4 col-md-6 text-right" style="line-height:45px;color:white;height:45px;vertical-align:middle;">
-                    Liên hệ: 0857.388.742 (Viber, Zalo) - trantrung02021989@gmail.com
-                </div>
-                <div class="hidden-xs hidden-sm hidden-md navbar-collapse" id="header">
-                    <ul class="nav navbar-nav navbar-right" id="set-background">
-                        <li>
-                            <label style="margin: 13px 15px; color: white">
-                                Cửa hàng
-                            </label>
-                        </li>
-                        <li style="border-right: 1px solid #E1E1E1; padding-right: 15px;">
-                            <select id="store-id" class="form-control" style="margin: 8px auto">
-                                <option selected="" value="4">Kho Hà Nội</option>
-                                <option value="5">Clup Phạm Văn Đồng</option>
-                                <option value="6">hung yen</option>
-                            </select>
-                        </li>
-                        <li class="dropdown user-profile">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="hello">Xin chào, </span>admin<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="account"><i class="fa fa-user"></i>Tài khoản</a></li>
-                                <li><a href="authentication/logout"><i class="fa fa-power-off"></i>Thoát</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <section class="main" role="main">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-2 col-sm-3 padd-0">
-                    <div class="sidebar sidebar-fixed hidden-xs" id="sidebar">
-                        <ul class="nav nav-pills nav-list nav-stacked">
-                            <li id="pos"><a href="cafe" style="color: white;background-color: black!important;"><i class="fa fas fa-coffee"></i>Cafe</a></li>
-                            <li id="dashboard" class="active"><a href="dashboard"><i class="fa fa-tachometer"></i>Tổng quan</a></li>
-                            <li id="orders"><a href="orders"><i class="fa fa-shopping-cart"></i>Đơn hàng</a></li>
-                            <li id="product"><a href="product"><i class="fa fa-barcode"></i>Sản phẩm</a></li>
-                            <li id="customer"><a href="customer"><i class="fa fa-users"></i>Khách hàng - NCC</a></li>
-                            <li id="input"><a href="input"><i class="fa fa-truck"></i>Nhập kho</a></li>
-                            <li id="transfer"><a href="transfer"><i class="fa fa-truck"></i>Chuyển kho</a></li>
-                            <li id="inventory"><a href="inventory"><i class="fa fa-list-alt"></i>Tồn kho</a></li>
-                            <li id="revenue"><a href="revenue"><i class="fa fa-signal"></i>Doanh số</a></li>
-                            <li id="receipt"><a href="receipt"><i class="fa fa-file-text"></i>Phiếu thu</a></li>
-                            <li id="payment"><a href="payment"><i class="fa fa-file-text"></i>Phiếu chi</a></li>
-                            <li id="cashbook"><a href="cashbook"><i class="fa fa-cogs"></i>Sổ quỹ</a></li>
-                            <li id="profit"><a href="profit"><i class="fa fa-usd"></i>Lợi nhuận</a></li>
-                            <li id="setting"><a href="setting"><i class="fa fa-cogs"></i>Thiết lập</a></li>
-                        </ul>
+<body>
+    <nav id="menu-mobile" class="hidden">
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="pages/dieu-khoan-dich-vu.html">Về chúng tôi</a></li>
+            <li><a href="collections/all.html">Sản phẩm & Dịch vụ</a></li>
+            <li><a href="pages/about-us.html">Hướng dẫn thuê xe</a></li>
+            <li><a href="collections/dich-vu-sua-chua-bao-duong.html">Sửa chữa & Bảo dưỡng</a></li>
+            <li><a href="blogs/news.html">Tin</a></li>
+        </ul>
+    </nav>
+    <div id="page">
+        <div id="quick-view-modal" class="wrapper-quickview" style="display:none;">
+            <div class="quickviewOverlay"></div>
+            <div class="jsQuickview">
+                <div class="modal-header clearfix" style="width:100%">
+                    <a href="#" class="quickview-title text-left" title="">
+                        <h4 class="p-title modal-title"></h4>
+                    </a>
+                    <div class="quickview-close">
+                        <a href="javascript:void(0);"><i class="fa fa-times"></i></a>
                     </div>
                 </div>
-                <div class="col-md-10 col-sm-9 padd-left-0">
-                    <div class="main-content">
-                        <div class="alert alert-dange ajax-error" role="alert"><span style="font-weight: bold; font-size: 18px;">Thông báo!</span><br>
-                            <div class="ajax-error-ct"></div>
-                        </div>
-                        <div class="alert ajax-success" role="alert" style="width: 350px;background: rgba(92,130,79,0.9); display:none; color: #fff;" data-original-title="" title=""><span style="font-weight: bold; font-size: 18px;">Thông báo!</span>
-                            <br>
-                            <div class="ajax-success-ct"></div>
-                        </div>
-                        <!-- Start create employee -->
-                        <div class="modal fade" id="create-nv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                        <h4 class="modal-title" id="myModalLabel" style="text-transform: uppercase;"><i class="fa fa-user"></i>
-                                            Thêm tài khoản đăng nhập </h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form class="form-horizontal" id="frm-cruser">
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="tennhanvien">Tên nhân viên</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="display_name" name="display_name" class="form-control" value="" placeholder="Nhập tên nhân viên">
-                                                    <span style="color: red; font-style: italic;" class="error error-display_name"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="manv">Mã nhân viên</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="manv" name="manv" class="form-control" value="" placeholder="Nhập mã nhân viên">
-                                                    <span style="color: red; font-style: italic;" class="error error-manv"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="manv">Email</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="mail" name="email" class="form-control" value="" placeholder="Nhập email của bạn">
-                                                    <span style="color: red; font-style: italic;" class="error error-mail"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="manv">Mật khẩu</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="password" id="password" name="password" class="form-control" value="" placeholder="Nhập Mật khẩu">
-                                                    <span style="color: red; font-style: italic;" class="error error-password"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3 padd-right-0">
-                                                    <label for="manv">Nhóm người dùng</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <div class="group-user">
-                                                        <div class="group-selbox">
-                                                            <select name="group" id="sel-group" class="form-control">
-                                                            </select>
-                                                        </div>
-                                                        <span style="color: red; font-style: italic;" class="error error-group"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="stock">Kho làm việc</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <div class="stock-selbox"></div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary btn-sm btn-crnv" onclick="cms_cruser()"><i class="fa fa-check"></i> Lưu
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i class="fa fa-undo"></i> Bỏ qua
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end create employee -->
-                        <!-- Start create function -->
-                        <div class="modal fade" id="create-func" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                        <h4 class="modal-title" id="myModalLabel" style="text-transform: uppercase;"><i class="fa fa-user"></i>
-                                            Thêm Chức năng </h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="tennhanvien">URL</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="permisstion_url" name="permisstion_url" class="form-control" value="" placeholder="Nhập url cho phép của chức năng">
-                                                    <span style="color: red; font-style: italic;" class="error error-permisstion_url"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="manv">Tên chức năng</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="permisstion_name" name="permisstion_name" class="form-control" value="" placeholder="Nhập tên chức năng">
-                                                    <span style="color: red; font-style: italic;" class="error error-permisstion_name"></span>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary btn-sm btn-crfunc"><i class="fa fa-check"></i> Lưu</button>
-                                        <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i class="fa fa-undo"></i> Bỏ qua
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end create function -->
-                        <!-- Start create group -->
-                        <div class="modal fade" id="create-group" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                        <h4 class="modal-title" id="myModalLabel" style="text-transform: uppercase;"><i class="fa fa-user"></i>
-                                            Thêm nhóm người dùng </h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="group-name">Tên Nhóm</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="group-name" name="group_name" class="form-control" value="" placeholder="Nhập tên nhóm người dùng">
-                                                    <span style="color: red; font-style: italic;" class="error error-group_name"></span>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary btn-sm btn-crgroup"><i class="fa fa-check"></i> Lưu
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i class="fa fa-undo"></i> Bỏ qua
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end create function -->
-                        <!-- Start create group -->
-                        <div class="modal fade" id="create-store" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                        <h4 class="modal-title" id="myModalLabel" style="text-transform: uppercase;"><i class="fa fa-user"></i>
-                                            Thêm kho </h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="group-name">Tên Kho</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="store-name" name="store_name" class="form-control" value="" placeholder="Nhập tên kho">
-                                                    <span style="color: red; font-style: italic;" class="error error-store_name"></span>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary btn-sm" onclick="cms_crstore();"><i class="fa fa-check"></i> Lưu
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i class="fa fa-undo"></i> Bỏ qua
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end create function -->
-                        <!-- start create customer -->
-                        <div class="modal fade" id="create-cust" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Tạo mới khách hàng</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-horizontal" id="frm-crcust">
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="customer_name">Nhóm KH</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <select id="customer_group" class="form-control">
-                                                        <option value="0">Khách lẻ</option>
-                                                        <option value="1">Khách sỉ</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="customer_name">Mã khách hàng</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="customer_code" name="customer_code" class="form-control" value="" placeholder="Mã khách hàng(tự sinh nếu bỏ trống)">
-                                                    <span style="color: red; font-style: italic;" class="error error-customer_code"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="customer_name">Tên Khách hàng</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="customer_name" name="customer_name" class="form-control" value="" placeholder="Nhập tên khách hàng( bắc buộc )">
-                                                    <span style="color: red; font-style: italic;" class="error error-customer_name"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="customer_phone">Số điện thoại</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="customer_phone" name="customer_phone" class="form-control" value="" placeholder="">
-                                                    <span style="color: red; font-style: italic;" class="error error-customer_phone"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="customer_email">Email</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="customer_email" name="customer_email" class="form-control" value="" placeholder="Nhập email khách hàng ( ví dụ: kh10@gmail.com )">
-                                                    <span style="color: red; font-style: italic;" class="error error-customer_email"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="customer_addr">Địa chỉ</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="customer_addr" name="customer_addr" class="form-control" value="" placeholder="">
-                                                    <span style="color: red; font-style: italic;" class="error error-customer_addr"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="customer_notes">Ghi chú</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="customer_notes" name="customer_notes" class="form-control" value="" placeholder="">
-                                                    <span style="color: red; font-style: italic;" class="error error-customer_notes"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="customer_birthday">Ngày sinh</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="customer_birthday" name="customer_birthday" class="form-control txttimes" value="" placeholder="yyyy-mm-dd">
-                                                    <span style="color: red;" class="error error-customer_birthday"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="customer_gender">Giới tính</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="radio" name="gender" checked="" class="customer_gender" value="0"> Nam
-                                                    <input type="radio" name="gender" class="customer_gender" value="1"> Nữ
-                                                    <span style="color: red; font-style: italic;" class="error error-customer_gender"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="customer_gender">Nợ</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="is_customer_debt" name="is_customer_debt" class="txtMoney form-control" value="" placeholder="Khách hàng đang nợ">
-                                                    <span style="color: red; font-style: italic;" class="error error-customer_debt"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12">
-                                                    <div class="jumbotron text-center" id="img_upload" style="border-radius: 0; margin-bottom: 10px; padding: 15px 20px;">
-                                                        <h3>Upload hình ảnh khách hàng</h3>
-                                                        <small style="font-size: 14px; margin-bottom: 5px; display: inline-block;">(Để
-                                                            tải và hiện thị nhanh, mỗi ảnh lên có dung lượng tối đa 10MB.)
-                                                        </small>
-                                                        <p>
-                                                        </p>
-                                                        <center>
-                                                            <div id="customer_img_preview" style="display: none;"></div>
-                                                            <form id="customer_image_upload_form" method="post" enctype="multipart/form-data" action="product/upload_img" autocomplete="off">
-                                                                <div class="file_input_container">
-                                                                    <div class="upload_button"><input type="file" name="photo" id="customer_photo" class="file_input"></div>
-                                                                </div>
-                                                                <br clear="all">
-                                                            </form>
-                                                        </center>
-                                                        <p></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary btn-sm btn-crcust" onclick="cms_crCustomer();"><i class="fa fa-check"></i> Lưu
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i class="fa fa-undo"></i> Bỏ qua
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end customer -->
-                        <!-- start create supplier -->
-                        <div class="modal fade" id="create-sup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Tạo mới nhà cung cấp</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-horizontal" id="frm-crsup">
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="supplier_name">Mã nhà cung cấp</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="supplier_code" name="supplier_code" class="form-control" value="" placeholder="Mã nhà cung cấp (Tự sinh nếu bỏ trống)">
-                                                    <span style="color: red; font-style: italic;" class="error error-supplier_code"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="supplier_name">Tên nhà cung cấp</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="supplier_name" name="supplier_name" class="form-control" value="" placeholder="Nhập tên nhà cung cấp (bắc buộc)">
-                                                    <span style="color: red; font-style: italic;" class="error error-supplier_name"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="supplier_phone">Số điện thoại</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="supplier_phone" name="supplier_phone" class="form-control" value="" placeholder="Số điện thoại">
-                                                    <span style="color: red; font-style: italic;" class="error error-supplier_phone"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="supplier_email">Email</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="supplier_email" name="supplier_email" class="form-control" value="" placeholder="Nhập email nhà cung cấp ( ví dụ: kh10@gmail.com )">
-                                                    <span style="color: red; font-style: italic;" class="error error-supplier_email"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="supplier_addr">Địa chỉ</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="supplier_addr" name="supplier_addr" class="form-control" value="" placeholder="">
-                                                    <span style="color: red; font-style: italic;" class="error error-supplier_addr"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="supplier_notes">Ghi chú</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="supplier_notes" name="notes" class="form-control" value="" placeholder="">
-                                                    <span style="color: red; font-style: italic;" class="error error-supplier_notes"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <label for="is_supplier_debt">Nợ</label>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" id="is_supplier_debt" name="is_supplier_debt" class="form-control txtMoney" value="" placeholder="Đang nợ nhà cung cấp">
-                                                    <span style="color: red; font-style: italic;" class="error error-supplier_debt"></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12">
-                                                    <div class="jumbotron text-center" id="img_upload" style="border-radius: 0; margin-bottom: 10px; padding: 15px 20px;">
-                                                        <h3>Upload hình ảnh nhà cung cấp</h3>
-                                                        <small style="font-size: 14px; margin-bottom: 5px; display: inline-block;">(Để
-                                                            tải và hiện thị nhanh, mỗi ảnh lên có dung lượng tối đa 10MB.)
-                                                        </small>
-                                                        <p>
-                                                        </p>
-                                                        <center>
-                                                            <div id="supplier_img_preview" style="display: none;"></div>
-                                                            <form id="supplier_image_upload_form" method="post" enctype="multipart/form-data" action="product/upload_img" autocomplete="off">
-                                                                <div class="file_input_container">
-                                                                    <div class="upload_button"><input type="file" name="photo" id="supplier_photo" class="file_input"></div>
-                                                                </div>
-                                                                <br clear="all">
-                                                            </form>
-                                                        </center>
-                                                        <p></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary btn-sm btn-crsup" onclick="cms_crsup();"><i class="fa fa-check"></i> Lưu
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i class="fa fa-undo"></i> Bỏ qua
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="list-prd-manufacture" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Quản lý nhà sản xuất</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="tabtable">
-                                            <!-- Nav tabs -->
-                                            <ul class="nav nav-tabs tab-setting" role="tablist" style="background-color: #EFF3F8; padding: 5px 0 0 15px;">
-                                                <li role="presentation" class="active list-manufacture-click" style="margin-right: 3px;"><a href="#list-manufacture" aria-controls="list-manufacture" role="tab" data-toggle="tab"><i class="fa fa-list"></i> Danh sách Nhà sản xuất</a></li>
-                                                <li role="presentation"><a href="#create-manufacture" aria-controls="create-manufacture" role="tab" data-toggle="tab"><i class="fa fa-plus"></i> Tạo mới nhà sản xuất
-                                                    </a></li>
-                                            </ul>
-                                            <!-- Tab panes -->
-                                            <div class="tab-content" style="padding:10px; border: 1px solid #ddd; border-top: none;">
-                                                <div role="tabpanel" class="tab-pane active" id="list-manufacture">
-                                                    <div class="prd_manufacture-body">
-                                                    </div>
-                                                </div>
-                                                <!-- Tab Function -->
-                                                <div role="tabpanel" class="tab-pane" id="create-manufacture">
-                                                    <div class="row form-horizontal">
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <div class="col-md-7 padd-right-0">
-                                                                    <input type="text" style="border-radius: 0 !important;" class="form-control" id="prd_manuf_name" value="" placeholder="Nhập tên Nhà sản xuất">
-                                                                </div>
-                                                                <div class="input-groups-btn col-md-5 padd-0">
-                                                                    <button type="button" class="btn btn-primary" style="border-radius: 0 3px 3px 0;" onclick="cms_create_manufacture(1);"><i class="fa fa-check"></i> Lưu
-                                                                    </button>
-                                                                    <button type="button" class="btn btn-primary " onclick="cms_create_manufacture(0);"><i class="fa fa-floppy-o"></i> Lưu và tiếp tục
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i class="fa fa-undo"></i> Đóng
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="list-prd-unit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Quản lý đơn vị tính</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="tabtable">
-                                            <ul class="nav nav-tabs tab-setting" role="tablist" style="background-color: #EFF3F8; padding: 5px 0 0 15px;">
-                                                <li role="presentation" class="active list-unit-click" style="margin-right: 3px;"><a href="#list-unit" aria-controls="list-unit" role="tab" data-toggle="tab"><i class="fa fa-list"></i> Danh sách đơn vị tính</a></li>
-                                                <li role="presentation"><a href="#create-unit" aria-controls="create-unit" role="tab" data-toggle="tab"><i class="fa fa-plus"></i> Tạo mới đơn vị tính</a></li>
-                                            </ul>
-                                            <div class="tab-content" style="padding:10px; border: 1px solid #ddd; border-top: none;">
-                                                <div role="tabpanel" class="tab-pane active" id="list-unit">
-                                                    <div class="prd_unit-body">
-                                                    </div>
-                                                </div>
-                                                <div role="tabpanel" class="tab-pane" id="create-unit">
-                                                    <div class="row form-horizontal">
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <div class="col-md-7 padd-right-0">
-                                                                    <input type="text" style="border-radius: 0 !important;" class="form-control" id="prd_unit_name" value="" placeholder="Nhập tên đơn vị tính">
-                                                                </div>
-                                                                <div class="input-groups-btn col-md-5 padd-0">
-                                                                    <button type="button" class="btn btn-primary" style="border-radius: 0 3px 3px 0;" onclick="cms_create_unit(1);"><i class="fa fa-check"></i> Lưu
-                                                                    </button>
-                                                                    <button type="button" class="btn btn-primary " onclick="cms_create_unit(0);"><i class="fa fa-floppy-o"></i> Lưu và tiếp tục
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i class="fa fa-undo"></i> Đóng
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="list-prd-group" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Quản lý danh mục</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="tabtable">
-                                            <!-- Nav tabs -->
-                                            <ul class="nav nav-tabs tab-setting" role="tablist" style="background-color: #EFF3F8; padding: 5px 0 0 15px;">
-                                                <li role="presentation" class="active" style="margin-right: 3px;"><a href="#list-groups" aria-controls="list-group" role="tab" data-toggle="tab"><i class="fa fa-list"></i> Danh sách danh mục</a></li>
-                                                <li role="presentation"><a href="#create-groups" aria-controls="create-group" role="tab" data-toggle="tab"><i class="fa fa-plus"></i> Tạo mới danh mục</a>
-                                                </li>
-                                            </ul>
-                                            <!-- Tab panes -->
-                                            <div class="tab-content" style="padding:10px; border: 1px solid #ddd; border-top: none;">
-                                                <div role="tabpanel" class="tab-pane active" id="list-groups">
-                                                    <div class="prd_group-body">
-                                                        <div class="text-center"><img src="images/balls.gif"></div>
-                                                    </div>
-                                                </div>
-                                                <!-- Tab Function -->
-                                                <div role="tabpanel" class="tab-pane" id="create-groups">
-                                                    <div class="row form-horizontal">
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <div class="col-md-4 text-right">
-                                                                    <label>Tên danh mục</label>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <input type="text" id="prd_group_name" class="form-control" placeholder="Nhập tên danh mục.">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <div class="col-md-4 text-right">
-                                                                    <label>Danh mục cấp cha</label>
-                                                                </div>
-                                                                <div class="col-md-8">
-                                                                    <select id="parentid" class="form-control">
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <div class="col-md-8 col-md-offset-4">
-                                                                    <button type="button" class="btn btn-primary" style="border-radius: 0 3px 3px 0;" onclick="cms_create_group(1);"><i class="fa fa-check"></i> Lưu
-                                                                    </button>
-                                                                    <button type="button" class="btn btn-primary " onclick="cms_create_group(0);"><i class="fa fa-floppy-o"></i> Lưu
-                                                                        và tiếp tục
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i class="fa fa-undo"></i> Đóng
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="report">
-                                <div class="col-md-12">
-                                    <h4 class="dashboard-title"><i class="fa fa-signal"></i>Hoạt động hôm nay</h4>
-                                </div>
-                                <div class="col-md-3 height100px">
-                                    <div class="report-box box-green">
-                                        <div class="infobox-icon">
-                                            <i class="fa fa-signal"></i>
-                                        </div>
-                                        <div class="infobox-data">
-                                            <h3 class="infobox-title">Tiền bán hàng</h3>
-                                            <span class="infobox-data-number text-center">0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 height100px">
-                                    <div class="report-box box-blue">
-                                        <div class="infobox-icon">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </div>
-                                        <div class="infobox-data">
-                                            <h3 class="infobox-title">Số đơn hàng :</h3>
-                                            <span class="infobox-data-number text-center">0</span>
-                                            <h3 class="infobox-title">SL SP :</h3>
-                                            <span class="infobox-data-number text-center">0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 height100px">
-                                    <div class="report-box box-red">
-                                        <div class="infobox-icon">
-                                            <i class="fa fa-undo"></i>
-                                        </div>
-                                        <div class="infobox-data">
-                                            <h3 class="infobox-title">Số đơn trả :</h3>
-                                            <span class="infobox-data-number text-center">0</span>
-                                            <h3 class="infobox-title">SL SP :</h3>
-                                            <span class="infobox-data-number text-center">0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 height100px">
-                                    <div class="report-box box-orange">
-                                        <div class="infobox-icon">
-                                            <i class="fa fa-cloud"></i>
-                                        </div>
-                                        <div class="infobox-data">
-                                            <h3 class="infobox-title">Đơn hàng web</h3>
-                                            <span class="infobox-data-number">0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" style="background: #efefef; margin: 20px 0; overflow: hidden; ">
-                            <div class="col-md-4">
-                                <div class="widget widget-blue">
-                                    <div class="widget-header">
-                                        <h3 class="widget-title"><i class="fa fa-signal"></i>Hoạt động</h3>
-                                    </div>
-                                    <div class="widget-body">
-                                        <div class="row">
-                                            <div class="info col-xs-7">Tiền bán hàng</div>
-                                            <div class="info col-xs-5 data text-right">0</div>
-                                            <div class="info col-xs-7">Đơn bán / Đơn trả</div>
-                                            <div class="info col-xs-5 data text-right">0 / 0</div>
-                                            <div class="info col-xs-7">SL bán / SL trả</div>
-                                            <div class="info col-xs-5 data text-right">0 / 0</div>
-                                            <div class="info col-xs-7">Tiền trả hàng</div>
-                                            <div class="info col-xs-5 data text-right">0</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="widget widget-orange">
-                                    <div class="widget-header">
-                                        <h3 class="widget-title"><i class="fa fa-tags"></i>Thông tin kho</h3>
-                                    </div>
-                                    <div class="widget-body">
-                                        <div class="row">
-                                            <div class="info col-xs-7">Tồn kho</div>
-                                            <div class="info col-xs-5 data text-right">39</div>
-                                            <div class="info col-xs-7">Hết Hàng</div>
-                                            <div class="info col-xs-5 data text-right">67</div>
-                                            <div class="info col-xs-7">Sắp hết hàng</div>
-                                            <div class="info col-xs-5 data text-right">0</div>
-                                            <div class="info col-xs-7">Vượt định mức</div>
-                                            <div class="info col-xs-5 data text-right">0</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="widget widget-green">
-                                    <div class="widget-header">
-                                        <h3 class="widget-title"><i class="fa fa-barcode"></i>Thông tin sản phẩm</h3>
-                                    </div>
-                                    <div class="widget-body">
-                                        <div class="row">
-                                            <div class="info col-xs-7">sản phẩm/Nhà sản xuất</div>
-                                            <div class="info col-xs-5 data text-right">108 /6</div>
-                                            <div class="info col-xs-7">Chưa làm giá bán</div>
-                                            <div class="info col-xs-5 data text-right">66</div>
-                                            <div class="info col-xs-7">Chưa nhập giá mua</div>
-                                            <div class="info col-xs-5 data text-right">66</div>
-                                            <div class="info col-xs-7">Hàng chưa phân loại</div>
-                                            <div class="info col-xs-5 data text-right">0</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-md-5">
+                    <div class="quickview-image image-zoom">
+                        <img class="p-product-image-feature" src="#" alt="">
+                    </div>
+                    <div id="quickview-sliderproduct">
+                        <div class="quickview-slider">
+                            <ul class="slides"></ul>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-7">
+                    <form id="form-quickview" method="post" action="/cart/add">
+                        <div class="quickview-information">
+                            <div class="form-input">
+                                <div class="quickview-price product-price">
+                                    <span></span><del></del>
+                                </div>
+                            </div>
+                            <div class="quickview-variants variant-style clearfix">
+                                <select name="id" class="" id="quickview-select"></select>
+                            </div>
+                            <div class="quickview-description"></div>
+                            <div class="form-input ">
+                                <label>Số lượng</label>
+                                <input id="quantity-quickview" name="quantity" type="number" min="1" value="1" />
+                            </div>
+                            <div class="form-input" style="width: 100%">
+                                <button type="submit" class="btn-detail  btn-color-add btn-min-width btn-mgt btn-addcart">Thêm vào giỏ</button>
+                                <button disabled class="btn-detail addtocart btn-color-add btn-min-width btn-mgt btn-soldout">Hết hàng</button>
+                                <div class="qv-readmore">
+                                    <span> hoặc </span><a class="read-more p-url" href="#" role="button">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+        <section id="page_content" class="">
+            <div id="pageContainer" class="clearfix">
+                <header class="header bkg visible-lg">
+                    <div class="container clearfix">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 logo">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-7 col-xs-7">
+                                        <!-- LOGO -->
+                                        <h1>
+                                            <a href="index.html">
+                                                <img src="img/logo5a54.png" alt="Xetulai247" class="img-responsive logoimg" />
+                                            </a>
+                                        </h1>
+                                        <h1 style="display:none">
+                                            <a href="index.html">Xetulai247</a>
+                                        </h1>
+                                    </div>
+                                    <div class="hidden-lg hidden-md col-sm-5 col-xs-5 mobile-icons">
+                                        <div>
+                                            <a href="#" title="Xem giỏ hàng" class="mobile-cart"><span>5</span></a>
+                                            <a href="#" id="mobile-toggle"><i class="fa fa-bars"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 hidden-md hidden-sm hidden-xs">
+                                <aside class="top-info">
+                                    <div class="cart-info hidden-xs">
+                                        <a class="cart-link" href="cart.html">
+                                            <span class="icon-cart">
+                                            </span>
+                                            <div class="cart-number">
+                                                0
+                                            </div>
+                                        </a>
+                                        <div class="cart-view clearfix" style="display: none;">
+                                            <table id="clone-item-cart" class="table-clone-cart">
+                                                <tr class="item_2 hidden">
+                                                    <td class="img"><a href="#" title=""><img src="#" alt="" /></a></td>
+                                                    <td>
+                                                        <a class="pro-title-view" href="#" title=""></a>
+                                                        <span class="variant"></span>
+                                                        <span class="pro-quantity-view"></span>
+                                                        <span class="pro-price-view"></span>
+                                                        <span class="remove_link remove-cart">
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table id="cart-view">
+                                                <tr>
+                                                    <td>Hiện chưa có sản phẩm</td>
+                                                </tr>
+                                            </table>
+                                            <span class="line"></span>
+                                            <table class="table-total">
+                                                <tr>
+                                                    <td class="text-left">TỔNG TIỀN:</td>
+                                                    <td class="text-right" id="total-view-cart">0₫</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="cart.html" class="linktocart">Xem giỏ hàng</a></td>
+                                                    <td><a href="cart.html" class="linktocheckout">Thanh toán</a></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="navholder">
+                                        <nav id="subnav">
+                                            <ul>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>0965602468- 0983868388- 0961247247</a>
+                                                </li>
+                                                <li><a class="reg" href="account/register.html" title="Đăng ký">ĐĂNG KÝ</a></li>
+                                                <li><a class="log" href="account/login.html" title="Đăng nhập">Đăng nhập</a></li>
+                                            </ul>
+                                        </nav>
+                                        <div class="header_line">
+                                            <p>DỊCH VỤ CHUYÊN NGHIỆP<span class="mar-l5">THỦ TỤC ĐƠN GIẢN</span></p>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <nav class="navbar-main navbar navbar-default cl-pri">
+                    <!-- MENU MAIN -->
+                    <div class="container nav-wrapper check_nav">
+                        <div class="row">
+                            <div class="navbar-header">
+                                <div class="mobile-menu-icon-wrapper">
+                                    <div class="menu-logo">
+                                        <h1 class="logo logo-mobile">
+                                            <a href="index.html">
+                                                <img src="img/logo5a54.png" alt="Xetulai247" class="img-responsive logoimg" />
+                                            </a>
+                                        </h1>
+                                        <div class="nav-login">
+                                            <a href="account/login.html" class="cart " title="Tài khoản">
+                                                <svg class="icon icon-user" viewBox="0 0 32 32">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-user">
+                                                    </use>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="menu-btn click-menu-mobile "><a href="#menu-mobile" class="navbar-toggle">
+                                                <span class="sr-only">Toggle navigation</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span></a>
+                                        </div>
+                                        <div id="cart-targets" class="cart">
+                                            <a href="cart.html" class="cart " title="Giỏ hàng">
+                                                <span>
+                                                    <svg class="shopping-cart">
+                                                        <use xmlns:xlink="//www.w3.org/1999/xlink" xlink:href="#icon-add-cart" />
+                                                    </svg>
+                                                </span>
+                                                <span id="cart-count" class="cart-number">0</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="search-bar-top">
+                                        <div class="search-input-top">
+                                            <form action="/search">
+                                                <input type="hidden" name="type" value="product" />
+                                                <input type="text" name="q" placeholder="Tìm kiếm sản phẩm ..." />
+                                                <button type="submit" class="icon-search">
+                                                    <svg class="icon-search_white">
+                                                        <use xmlns:xlink="//www.w3.org/1999/xlink" xlink:href="#icon-search_white" />
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav clearfix">
+                                    <li>
+                                        <a href="index.html" class=" current" title="Trang chủ">
+                                            <span>Trang chủ</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/dieu-khoan-dich-vu.html" class="" title="Về chúng tôi">
+                                            <span>Về chúng tôi</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="collections/all.html" class="" title="Sản phẩm & Dịch vụ">
+                                            <span>Sản phẩm & Dịch vụ</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="pages/about-us.html" class="" title="Hướng dẫn thuê xe">
+                                            <span>Hướng dẫn thuê xe</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="collections/dich-vu-sua-chua-bao-duong.html" class="" title="Sửa chữa & Bảo dưỡng">
+                                            <span>Sửa chữa & Bảo dưỡng</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="blogs/news.html" class="" title="Tin">
+                                            <span>Tin</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="hidden-xs pull-right right-menu">
+                                <ul class="nav navbar-nav pull-right">
+                                    <li class="col-md-12">
+                                        <div class="search-bar">
+                                            <div class="">
+                                                <form action="/search">
+                                                    <input type="hidden" name="type" value="product" />
+                                                    <input type="text" name="q" placeholder="Tìm kiếm..." autocomplete="off" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--/.nav-collapse -->
+                        </div>
+                    </div><!-- End container  -->
+                </nav>
+                <!-- Begin slider -->
+                <div class="slider-default bannerslider">
+                    <div class="hrv-banner-container">
+                        <div class="hrvslider">
+                            <ul class="slides">
+                                <li>
+                                    <a href="collections/all.html" class="hrv-url">
+                                        <img class="img-responsive" src="img/slideshow_15a54.jpg" alt="Dịch vụ cho thuê; xe" />
+                                    </a>
+                                    <div id="hrv-banner-caption1" class="hrv-caption hrv-banner-caption">
+                                        <div class="container">
+                                            <div class="hrv-caption-inner">
+                                                <div class="hrv-banner-content slider-1">
+                                                    <h2 class="hrv-title1">DỊCH VỤ THUÊ XE HÀNG ĐẦU VIỆT NAM</h2>
+                                                    <h3 class="hrv-title2">GỌI NGAY: 0965602468 0983868388 - 0961247247</h3>
+                                                    <a href="collections/all.html" class="hrv-url">Xem ngay</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="collections/all.html" class="hrv-url">
+                                        <img class="img-responsive" src="img/slideshow_25a54.jpg" alt="Thực phẩm sạch" />
+                                    </a>
+                                    <div id="hrv-banner-caption2" class="hrv-caption hrv-banner-caption">
+                                        <div class="container">
+                                            <div class="hrv-caption-inner">
+                                                <div class="hrv-banner-content slider-2">
+                                                    <h2 class="hrv-title1">THỦ TỤC CHO THUÊ CỰC KỲ ĐƠN GIẢN</h2>
+                                                    <h3 class="hrv-title2">GỌI NGAY: 0965602468 0983868388 - 0961247247</h3>
+                                                    <a href="collections/all.html" class="hrv-url">Xem ngay</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="collections/all.html" class="hrv-url">
+                                        <img class="img-responsive" src="img/slideshow_35a54.jpg" alt="Th&#225;ng v&#224;ng ưu đ&#227;i" />
+                                    </a>
+                                    <div id="hrv-banner-caption3" class="hrv-caption hrv-banner-caption">
+                                        <div class="container">
+                                            <div class="hrv-caption-inner">
+                                                <div class="hrv-banner-content slider-3">
+                                                    <h2 class="hrv-title1"></h2>
+                                                    <h3 class="hrv-title2">DÀN XE ĐỜI MỚI - CHỦNG LOẠI ĐA DẠNG</h3>
+                                                    <a href="collections/all.html" class="hrv-url">Xem ngay</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="collections/all.html" class="hrv-url">
+                                        <img class="img-responsive" src="img/slideshow_45a54.jpg" alt="" />
+                                    </a>
+                                    <div id="hrv-banner-caption4" class="hrv-caption hrv-banner-caption">
+                                        <div class="container">
+                                            <div class="hrv-caption-inner">
+                                                <div class="hrv-banner-content slider-4">
+                                                    <h2 class="hrv-title1">DỊCH VỤ SỬA CHỮA Ô TÔ 24/7</h2>
+                                                    <h3 class="hrv-title2">LIÊN HỆ: 0915131247</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    jQuery(document).ready(function(){
+    if ( $('.slides li').size() > 0 ) {
+        $(".hrv-banner-container .slides").owlCarousel({
+            singleItem: true,
+            autoPlay : 5000,
+            items : 1,
+            itemsDesktop : [1199,1],
+            itemsDesktopSmall : [980,1],
+            itemsTablet: [768,1],
+            itemsMobile : [479,1],
+            slideSpeed : 500,
+            paginationSpeed : 500,
+            rewindSpeed : 500,
+            addClassActive: true,
+            navigation : true,
+            stopOnHover : true,
+            pagination : false,
+            scrollPerPage:true,
+            afterMove: nextslide,
+            afterInit: nextslide,
+        });
+        function nextslide() {
+            $(".hrv-banner-container .owl-item .hrv-banner-caption").css('display','none');
+            $(".hrv-banner-container .owl-item .hrv-banner-caption").removeClass('hrv-caption')
+            $(".hrv-banner-container .owl-item.active .hrv-banner-caption").css('display','block');
+
+            var heading = $('.hrv-banner-container .owl-item.active .hrv-banner-caption').clone().removeClass();
+            $('.hrv-banner-container .owl-item.active .hrv-banner-caption').remove();
+            $('.hrv-banner-container .owl-item.active>li').append(heading);
+            $('.hrv-banner-container .owl-item.active>li>div').addClass('hrv-banner-caption hrv-caption');
+        }
+
+    }
+})
+
+</script>
+            </div>
+            <section id="content" class="clearfix container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="main-content">
+                            <div class="product-list clearfix">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <aside class="styled_header  use_icon ">
+                                            <h2>What hot</h2>
+                                            <h3>Sản phẩm nổi bật</h3>
+                                            <span class="icon"><img src="img/icon_featured5a54.png" alt=""></span>
+                                        </aside>
+                                    </div>
+                                </div>
+                                <!--Product loop-->
+                                <div class="row content-product-list products-resize">
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 8%</span>
+                                                </div>
+                                                <a href="products/kia-morning-at.html" title="KIA MORNING AT">
+                                                    <img class="first-image  has-img" alt=" KIA MORNING AT " src="img/8eb8d52d9c41791f2050_8ae661ed213a4c2785b411f69e0968db_large.jpg" />
+                                                    <img class="second-image" src="img/1c87c802816e64303d7f_dfd25dde3ee540d28f059da2690bc2e7_large.jpg" alt=" KIA MORNING AT " />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1039173562)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/kia-morning-at.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/kia-morning-at"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-left -->
+                                                <h3 class="pro-name"><a href="products/kia-morning-at.html" title="KIA MORNING AT">KIA MORNING AT </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">550,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">600,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 6%</span>
+                                                </div>
+                                                <a href="products/kia-rio.html" title="KIA RIO - Trắng">
+                                                    <img class="first-image  has-img" alt=" KIA RIO - Trắng " src="img/kia_98c9aab9e4d746a3a1392c02ebc527ed_large.jpg" />
+                                                    <img class="second-image" src="img/kia_rio_2e6c0a78f7e6436fb546d7b01dbd10af_large.jpg" alt=" KIA RIO - Trắng " />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1039172710)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/kia-rio.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/kia-rio"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-right -->
+                                                <h3 class="pro-name"><a href="products/kia-rio.html" title="KIA RIO - Trắng">KIA RIO - Trắng </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">750,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">800,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 10%</span>
+                                                </div>
+                                                <a href="products/thue-xe-tu-lai-fortuner.html" title="Thuê xe tự lái Fortuner AT">
+                                                    <img class="first-image " alt=" Thuê xe tự lái Fortuner AT " src="img/fortuner_6a37f561d2d1410097ce67eb8b1eddc2_large.jpg" />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1038974991)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/thue-xe-tu-lai-fortuner.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/thue-xe-tu-lai-fortuner"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-left -->
+                                                <h3 class="pro-name"><a href="products/thue-xe-tu-lai-fortuner.html" title="Thuê xe tự lái Fortuner AT">Thuê xe tự lái Fortuner AT </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">900,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">1,000,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 8%</span>
+                                                </div>
+                                                <a href="products/thue-xe-hyundai-i-10-do.html" title="Thuê xe tự lái Hyundai i 10 - Đỏ">
+                                                    <img class="first-image " alt=" Thuê xe tự lái Hyundai i 10 - Đỏ " src="img/885985_416089418557138_2395320676879451878_o_d76f1b981d894593a95032137711d63d_large.jpg" />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1038973550)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/thue-xe-hyundai-i-10-do.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/thue-xe-hyundai-i-10-do"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-right -->
+                                                <h3 class="pro-name"><a href="products/thue-xe-hyundai-i-10-do.html" title="Thuê xe tự lái Hyundai i 10 - Đỏ">Thuê xe tự lái Hyundai i 10 - Đỏ </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">550,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">600,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 8%</span>
+                                                </div>
+                                                <a href="products/thue-xe-tu-lai-hyundai-i10-trang.html" title="Thuê xe tự lái Hyundai i10 - Trắng">
+                                                    <img class="first-image " alt=" Thuê xe tự lái Hyundai i10 - Trắng " src="img/10397208_416089398557140_8318947342116562388_o_bb58b1d549554fbe9ae03fb2c28a0c35_large.jpg" />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1038976857)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/thue-xe-tu-lai-hyundai-i10-trang.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/thue-xe-tu-lai-hyundai-i10-trang"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-left -->
+                                                <h3 class="pro-name"><a href="products/thue-xe-tu-lai-hyundai-i10-trang.html" title="Thuê xe tự lái Hyundai i10 - Trắng">Thuê xe tự lái Hyundai i10 - Trắng </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">550,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">600,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 6%</span>
+                                                </div>
+                                                <a href="products/thue-xe-toyota-innova-e-2014.html" title="Thuê xe tự lái Toyota Innova E 2014">
+                                                    <img class="first-image " alt=" Thuê xe tự lái Toyota Innova E 2014 " src="img/innova_7c_0fd795a303204e8383dbf60a8769723f_large.jpg" />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1038975334)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/thue-xe-toyota-innova-e-2014.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/thue-xe-toyota-innova-e-2014"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-right -->
+                                                <h3 class="pro-name"><a href="products/thue-xe-toyota-innova-e-2014.html" title="Thuê xe tự lái Toyota Innova E 2014">Thuê xe tự lái Toyota Innova E 2014 </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">750,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">800,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 8%</span>
+                                                </div>
+                                                <a href="products/toyota-camry-den.html" title="Toyota Camry - Đen">
+                                                    <img class="first-image  has-img" alt=" Toyota Camry - Đen " src="img/camry_2012_1_001b7966a40b47dbb1377a343c458840_large.jpg" />
+                                                    <img class="second-image" src="img/camry_2012_2_9cec6aa739424e20bd5b2a74e0c3c446_large.jpg" alt=" Toyota Camry - Đen " />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1039174104)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/toyota-camry-den.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/toyota-camry-den"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-left -->
+                                                <h3 class="pro-name"><a href="products/toyota-camry-den.html" title="Toyota Camry - Đen">Toyota Camry - Đen </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">1,200,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">1,300,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 5%</span>
+                                                </div>
+                                                <a href="products/toyota-fortuner-at-bac" title="Toyota Fortuner AT - Bạc">
+                                                    <img class="first-image  has-img" alt=" Toyota Fortuner AT - Bạc " src="img/fortuner_at_2_1b0ee22324674df187ae19270a71b3a2_large.jpg" />
+                                                    <img class="second-image" src="img/fortuner_at_bac_49f4998e4d8b4550a994ae9048ff8ba4_large.jpg" alt=" Toyota Fortuner AT - Bạc " />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1039174706)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/toyota-fortuner-at-bac" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/toyota-fortuner-at-bac"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-right -->
+                                                <h3 class="pro-name"><a href="products/toyota-fortuner-at-bac" title="Toyota Fortuner AT - Bạc">Toyota Fortuner AT - Bạc </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">950,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">1,000,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-sm-12 col-xs-12  pull-center center">
+                                        <a class="btn btn-readmore" href="collections/hot-products.html" role="button">Xem thêm</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Product loop-->
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-xs-12">
+                                    <div class="animation fade-in home-banner-1">
+                                        <aside class="banner-home-1">
+                                            <div class="divcontent"><span class="ad_banner_1">Không tăng giá dịp Lễ Tết<strong class="ad_banner_2">Với tất cả các đơn hàng thuê xe </strong></span>
+                                                <span class="ad_banner_desc">Chúng tôi cam kết giữ nguyên giá kể cả trong các dịp Lễ Tết. </span>
+                                            </div>
+                                            <div class="divstyle" style="border-color:;"></div>
+                                        </aside>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-list clearfix ">
+                                <div class="row">
+                                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                                        <aside class="styled_header  use_icon ">
+                                            <h3>Sản phẩm mới</h3>
+                                            <span class="icon"><img src="img/icon_sale5a54.png" alt="Newest trends"></span>
+                                        </aside>
+                                    </div>
+                                </div>
+                                <div class="row content-product-list products-resize">
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 8%</span>
+                                                </div>
+                                                <a href="products/kia-morning-at.html" title="KIA MORNING AT">
+                                                    <img class="first-image  has-img" alt=" KIA MORNING AT " src="img/8eb8d52d9c41791f2050_8ae661ed213a4c2785b411f69e0968db_large.jpg" />
+                                                    <img class="second-image" src="img/1c87c802816e64303d7f_dfd25dde3ee540d28f059da2690bc2e7_large.jpg" alt=" KIA MORNING AT " />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1039173562)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/kia-morning-at.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/kia-morning-at"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-left -->
+                                                <h3 class="pro-name"><a href="products/kia-morning-at.html" title="KIA MORNING AT">KIA MORNING AT </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">550,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">600,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 6%</span>
+                                                </div>
+                                                <a href="products/kia-rio.html" title="KIA RIO - Trắng">
+                                                    <img class="first-image  has-img" alt=" KIA RIO - Trắng " src="img/kia_98c9aab9e4d746a3a1392c02ebc527ed_large.jpg" />
+                                                    <img class="second-image" src="img/kia_rio_2e6c0a78f7e6436fb546d7b01dbd10af_large.jpg" alt=" KIA RIO - Trắng " />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1039172710)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/kia-rio.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/kia-rio"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-right -->
+                                                <h3 class="pro-name"><a href="products/kia-rio.html" title="KIA RIO - Trắng">KIA RIO - Trắng </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">750,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">800,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 10%</span>
+                                                </div>
+                                                <a href="products/thue-xe-tu-lai-fortuner.html" title="Thuê xe tự lái Fortuner AT">
+                                                    <img class="first-image " alt=" Thuê xe tự lái Fortuner AT " src="img/fortuner_6a37f561d2d1410097ce67eb8b1eddc2_large.jpg" />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1038974991)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/thue-xe-tu-lai-fortuner.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/thue-xe-tu-lai-fortuner"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-left -->
+                                                <h3 class="pro-name"><a href="products/thue-xe-tu-lai-fortuner.html" title="Thuê xe tự lái Fortuner AT">Thuê xe tự lái Fortuner AT </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">900,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">1,000,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 8%</span>
+                                                </div>
+                                                <a href="products/thue-xe-hyundai-i-10-do.html" title="Thuê xe tự lái Hyundai i 10 - Đỏ">
+                                                    <img class="first-image " alt=" Thuê xe tự lái Hyundai i 10 - Đỏ " src="img/885985_416089418557138_2395320676879451878_o_d76f1b981d894593a95032137711d63d_large.jpg" />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1038973550)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/thue-xe-hyundai-i-10-do.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/thue-xe-hyundai-i-10-do"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-right -->
+                                                <h3 class="pro-name"><a href="products/thue-xe-hyundai-i-10-do.html" title="Thuê xe tự lái Hyundai i 10 - Đỏ">Thuê xe tự lái Hyundai i 10 - Đỏ </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">550,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">600,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 8%</span>
+                                                </div>
+                                                <a href="products/thue-xe-tu-lai-hyundai-i10-trang.html" title="Thuê xe tự lái Hyundai i10 - Trắng">
+                                                    <img class="first-image " alt=" Thuê xe tự lái Hyundai i10 - Trắng " src="img/10397208_416089398557140_8318947342116562388_o_bb58b1d549554fbe9ae03fb2c28a0c35_large.jpg" />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1038976857)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/thue-xe-tu-lai-hyundai-i10-trang.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/thue-xe-tu-lai-hyundai-i10-trang"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-left -->
+                                                <h3 class="pro-name"><a href="products/thue-xe-tu-lai-hyundai-i10-trang.html" title="Thuê xe tự lái Hyundai i10 - Trắng">Thuê xe tự lái Hyundai i10 - Trắng </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">550,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">600,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 6%</span>
+                                                </div>
+                                                <a href="products/thue-xe-toyota-innova-e-2014.html" title="Thuê xe tự lái Toyota Innova E 2014">
+                                                    <img class="first-image " alt=" Thuê xe tự lái Toyota Innova E 2014 " src="img/innova_7c_0fd795a303204e8383dbf60a8769723f_large.jpg" />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1038975334)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/thue-xe-toyota-innova-e-2014.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/thue-xe-toyota-innova-e-2014"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-right -->
+                                                <h3 class="pro-name"><a href="products/thue-xe-toyota-innova-e-2014.html" title="Thuê xe tự lái Toyota Innova E 2014">Thuê xe tự lái Toyota Innova E 2014 </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">750,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">800,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 8%</span>
+                                                </div>
+                                                <a href="products/toyota-camry-den.html" title="Toyota Camry - Đen">
+                                                    <img class="first-image  has-img" alt=" Toyota Camry - Đen " src="img/camry_2012_1_001b7966a40b47dbb1377a343c458840_large.jpg" />
+                                                    <img class="second-image" src="img/camry_2012_2_9cec6aa739424e20bd5b2a74e0c3c446_large.jpg" alt=" Toyota Camry - Đen " />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1039174104)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/toyota-camry-den.html" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/toyota-camry-den"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-left -->
+                                                <h3 class="pro-name"><a href="products/toyota-camry-den.html" title="Toyota Camry - Đen">Toyota Camry - Đen </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">1,200,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">1,300,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-xs-6 pro-loop">
+                                        <div class="product-block product-resize">
+                                            <div class="product-img image-resize view view-third">
+                                                <div class="product-sale">
+                                                    <span><label class="sale-lb">- </label> 5%</span>
+                                                </div>
+                                                <a href="products/toyota-fortuner-at-bac" title="Toyota Fortuner AT - Bạc">
+                                                    <img class="first-image  has-img" alt=" Toyota Fortuner AT - Bạc " src="img/fortuner_at_2_1b0ee22324674df187ae19270a71b3a2_large.jpg" />
+                                                    <img class="second-image" src="img/fortuner_at_bac_49f4998e4d8b4550a994ae9048ff8ba4_large.jpg" alt=" Toyota Fortuner AT - Bạc " />
+                                                </a>
+                                                <div class="actionss">
+                                                    <div class="btn-cart-products">
+                                                        <a href="javascript:void(0);" onclick="add_item_show_modalCart(1039174706)">
+                                                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="view-details">
+                                                        <a href="products/toyota-fortuner-at-bac" class="view-detail">
+                                                            <span><i class="fa fa-clone"> </i></span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-quickview-products">
+                                                        <a href="javascript:void(0);" class="quickview" data-handle="/products/toyota-fortuner-at-bac"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail clearfix">
+                                                <!-- sử dụng pull-right -->
+                                                <h3 class="pro-name"><a href="products/toyota-fortuner-at-bac" title="Toyota Fortuner AT - Bạc">Toyota Fortuner AT - Bạc </a></h3>
+                                                <div class="pro-prices">
+                                                    <p class="pro-price">950,000₫</p>
+                                                    <p class="pro-price-del text-left"><del class="compare-price">1,000,000₫</del></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 pull-center center ">
+                                        <a class="btn btn-readmore" href="collections/onsale.html" role="button">Xem thêm</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="banner-bottom">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 home-category-item-2">
+                                        <div class="block-home-category">
+                                            <a href="collections/hot-products.html">
+                                                <img class="b-lazy b-loaded" src="img/block_home_category15a54.jpg" alt="Dịch vụ thuê xe ">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 home-category-item-3">
+                                        <div class="block-home-category">
+                                            <a href="collections/hot-products.html">
+                                                <img class="b-lazy b-loaded" src="img/block_home_category25a54.jpg" alt="Dịch vụ sửa chữa">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end Content-->
+                    </div>
+                </div>
+            </section>
+            <footer id="footer">
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3 col-xs-12 clear-sm">
+                                <div class="widget-wrapper animated">
+                                    <h3 class="title title_left">Giới thiệu</h3>
+                                    <div class="inner about_us">
+                                        <p class="message">Xe tự lái 24/7 à một trong những đơn vị đi đầu trong lĩnh vực cho thuê xe ô tô giá rẻ, uy tín. Chúng tôi cung cấp các dịch vụ cho thuê xe dài ngày, ngắn ngày, xe cưới, xe du lịch, xe công tác, xe đưa đón nhân viên, sự kiện,… chuyên nghiệp, phục vụ đa dạng mọi nhu cầu của quý khách hàng, trong và ngoài nước.</p>
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <i class="fa fa-home"></i>Linh Đường, Linh Đàm, Hoàng Mai, Hà Nội
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-envelope-o"></i> <a href="mailto:hoaanhdaotrans@gmail.com">hoaanhdaotrans@gmail.com</a>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-phone"></i>0965602468 - 0983868388 - 0961247247
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-2 col-xs-12 clear-sm">
+                                <div class="widget-wrapper animated">
+                                    <h3 class="title title_left">Liên kết</h3>
+                                    <div class="inner">
+                                        <ul class="list-unstyled list-styled">
+                                            <li>
+                                                <a href="index.html">Trang chủ</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages/dieu-khoan-dich-vu.html">Về chúng tôi</a>
+                                            </li>
+                                            <li>
+                                                <a href="collections/all.html">Sản phẩm & Dịch vụ</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages/about-us.html">Hướng dẫn thuê xe</a>
+                                            </li>
+                                            <li>
+                                                <a href="collections/dich-vu-sua-chua-bao-duong.html">Sửa chữa & Bảo dưỡng</a>
+                                            </li>
+                                            <li>
+                                                <a href="blogs/news.html">Tin</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-3 col-xs-12 clear-sm">
+                                <div class="widget-wrapper animated">
+                                    <h3 class="title title_left">Đăng kí nhận tin</h3>
+                                    <div class="inner">
+                                        <form accept-charset='UTF-8' action='/account/contact' class='contact-form' method='post'>
+                                            <input name='form_type' type='hidden' value='customer'>
+                                            <input name='utf8' type='hidden' value='✓'>
+                                            <div class="group-input">
+                                                <input type="hidden" id="contact_tags" name="contact[tags]" value="khách hàng tiềm năng, bản tin" />
+                                                <input type="email" required="required" name="contact[email]" id="contact_email" />
+                                                <span class="bar"></span>
+                                                <label>Nhập email của bạn</label>
+                                                <button type="submit"><i class="fa fa-paper-plane-o"></i></button>
+                                            </div>
+                                        </form>
+                                        <div class="caption">Hãy nhập email của bạn vào đây để nhận tin!</div>
+                                    </div>
+                                    <div id="widget-social" class="social-icons">
+                                        <ul class="list-inline">
+                                            <li>
+                                                <a target="_blank" href="https://www.facebook.com/Xe-tự-lái-247-398034353695978/" class="social-wrapper facebook">
+                                                    <span class="social-icon">
+                                                        <i class="fa fa-facebook"></i>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="https://www.facebook.com/Dịch-vụ-sửa-chữa-ô-tô-247-1619000961685156/" class="social-wrapper twitter">
+                                                    <span class="social-icon">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="index.html" class="social-wrapper pinterest">
+                                                    <span class="social-icon">
+                                                        <i class="fa fa-pinterest"></i>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="index.html" class="social-wrapper google">
+                                                    <span class="social-icon">
+                                                        <i class="fa fa-google-plus"></i>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="index.html" class="social-wrapper youtube">
+                                                    <span class="social-icon">
+                                                        <i class="fa fa-youtube"></i>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="index.html" class="social-wrapper instagram">
+                                                    <span class="social-icon">
+                                                        <i class="fa fa-instagram"></i>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-xs-12 clear-sm">
+                                <div class="widget-wrapper animated">
+                                    <h3 class="title title_left">Kết nối với chúng tôi</h3>
+                                    <div class="inner">
+                                        <!-- Facebook widget -->
+                                        <div class="footer-static-content">
+                                            <div class="fb-page" data-href="https://www.facebook.com/Xe-t%E1%BB%B1-l%C3%A1i-247-398034353695978/" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"> </div>
+                                        </div>
+                                        <div style="clear:both;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container copyright">
+                        <p>Copyright &copy; 2019 Xetulai247. <a target='_blank' href='https://www.haravan.com/'>Powered by Haravan</a>.</p>
+                    </div>
+                </div>
+            </footer>
+            <a href="#" class="scrollToTop ">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+            <!--Scroll to Top-->
+            <div id="myCart" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">
+                                Bạn có <b></b> sản phẩm trong giỏ hàng
+                            </h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span class="hrv-close-modal"></span>
+                            </button>
+                        </div>
+                        <form action="/cart" method="post" id="cartform">
+                            <div class="modal-body">
+                                <table style="width:100%;" id="cart-table">
+                                    <tr>
+                                        <th></th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Số lượng</th>
+                                        <th>Giá tiền</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr class="line-item original">
+                                        <td class="item-image"></td>
+                                        <td class="item-title">
+                                            <a></a>
+                                        </td>
+                                        <td class="item-quantity"></td>
+                                        <td class="item-price"></td>
+                                        <td class="item-delete text-center"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="modal-note">
+                                            <textarea placeholder="Viết ghi chú" id="note" name="note" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="total-price-modal">
+                                            Tổng cộng : <span class="item-total"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px;">
+                                    <div class="col-lg-6">
+                                        <div class="comeback">
+                                            <a href="collections/all.html">
+                                                <i class="fa fa-caret-left mr10"></i>Tiếp tục mua hàng
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 text-right">
+                                        <div class="buttons btn-modal-cart">
+                                            <button type="submit" class="button-default" id="checkout" name="checkout">
+                                                Đặt hàng
+                                                <i class="fa fa-caret-right"></i>
+                                            </button>
+                                        </div>
+                                        <div class="buttons btn-modal-cart">
+                                            <button type="submit" class="button-default" id="update-cart-modal" name="">
+                                                <i class="fa fa-caret-left"></i>
+                                                Cập nhật
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
     </section>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.datetimepicker.full.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script>
-    <script src="js/bootstrap-datepicker.vi.min.js"></script>
-    <script src="js/ckeditor.js"></script>
-    <script src="js/editor.js"></script>
-    <script src="js/ajax.js"></script>
-    <div>
-        <</div> </body> </html>
+</body>
+
+</html>
